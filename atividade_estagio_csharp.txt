@@ -1,0 +1,247 @@
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+
+//Questão 1
+/*
+
+int indice = 13;
+int k = 0;
+int soma = 0;
+
+while (k < indice)
+{
+    k = k + 1;
+
+    soma = soma + k;
+
+}
+
+Console.WriteLine($"O valor final da variável soma é: {soma}");
+
+ */
+
+
+
+
+
+//Questão 2
+/*
+//Calculando a sequência de Fibonacci, limitado até o 100o número
+class Program
+{
+
+    //Criando um método estático para que seja chamado diretamente na classe Program, juntamente com uma lista para iniciar a sequência de Fibonacci
+    static List<int> Fibonacci(int limite)
+    {
+        List<int> sequenciaFibonacci = new List<int> { 0, 1 };
+
+        //Criando um laço de repetição para fazer o cálculo da sequência
+        while (sequenciaFibonacci.Count < 1000)
+        {
+            int proximoNumero = sequenciaFibonacci[sequenciaFibonacci.Count - 1] + sequenciaFibonacci[sequenciaFibonacci.Count - 2];
+            if (proximoNumero <= limite)
+            {
+                sequenciaFibonacci.Add(proximoNumero);
+            }
+            else
+            {
+                break;
+            }
+        }
+        return sequenciaFibonacci;
+    }
+
+
+    //Criando um método para verificar se o número faz parte da sequência
+    static bool VerificaNumero(int numero, List<int> sequencia)
+    {
+        return sequencia.Contains(numero);
+    }
+
+    //Iniciando o processo de escolha de número, validação do número e saber se o mesmo está dentro do limite anteriormente definido
+    static void Main(string[] args)
+    {
+        Console.Write("Informe um número: ");
+        int numeroInformado = Convert.ToInt32(Console.ReadLine());
+        int limite = numeroInformado;
+
+        List<int> sequenciaFibonacci = Fibonacci(limite);
+
+
+        //Desenvolvendo um laço de repetição para que a sequência seja calculada e informar se, na lista, o número faz parte ou não da sequência de Fibonacci
+        Console.WriteLine("Sequência de Fibonacci: \n");
+        foreach (int num in sequenciaFibonacci)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        if (VerificaNumero(numeroInformado, sequenciaFibonacci))
+        {
+            Console.WriteLine($"O número {numeroInformado} pertence à sequência de Fibonacci.");
+        }
+        else
+        {
+            Console.WriteLine($"O número {numeroInformado} não pertence à sequência de Fibonacci.");
+        }
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+//Questão 3
+/*
+class Program
+{
+    //Desenvolvendo a primeira sequência que cada número subsequente é adicionado +2
+    static List<int> SequenciaA(int n)
+    {
+        List<int> resultado = new List<int> { 1 };
+        for (int i = 1; i < n; i++)
+        {
+            resultado.Add(resultado[i - 1] + 2);
+        }
+        return resultado;
+    }
+
+    //Desenvolvendo a segunda sequência que cada número subsequente é multiplicado por 2
+    static List<int> SequenciaB(int n)
+    {
+        List<int> resultado = new List<int> { 2 };
+        for (int i = 1; i < n; i++)
+        {
+            resultado.Add(resultado[i - 1] * 2);
+        }
+        return resultado;
+    }
+
+
+    //Desenvolvendo a terceira sequência que cada número subsequente é somado por números ímpares também subsequentes, começando pelo número 1
+    static List<int> SequenciaC(int n)
+    {
+        List<int> resultado = new List<int>();
+        for (int i = 0; i < n; i++)
+        {
+            resultado.Add(i * i);
+        }
+        return resultado;
+    }
+
+    //Desenvolvendo a quarta sequência que cada número subsequente é somado pela falta dos números subsequentes acrescentados de 8. Começando por 12, 20, 28 e por fim 36
+    static List<int> SequenciaD(int n)
+    {
+        List<int> resultado = new List<int>();
+        for (int i = 2; i <= n * 2; i += 2)
+        {
+            resultado.Add(i * i);
+        }
+        return resultado;
+    }
+
+    //Desenvolvendo a quinta sequência que é a de Fibonacci
+    static List<int> SequenciaE(int n)
+    {
+        List<int> resultado = new List<int> { 1, 1 };
+        for (int i = 2; i < n; i++)
+        {
+            resultado.Add(resultado[i - 1] + resultado[i - 2]);
+        }
+        return resultado;
+    }
+
+    //A sequência do último número não consegui desenvolver em código, mas a resposta é 200, pois segue uma ordem de que todos esses números começam com a letra D
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Sequência A:");
+        List<int> sequenciaA = SequenciaA(6);
+        Console.WriteLine(string.Join(", ", sequenciaA));
+
+        Console.WriteLine("\nSequência B:");
+        List<int> sequenciaB = SequenciaB(8);
+        Console.WriteLine(string.Join(", ", sequenciaB));
+
+        Console.WriteLine("\nSequência C:");
+        List<int> sequenciaC = SequenciaC(8);
+        Console.WriteLine(string.Join(", ", sequenciaC));
+
+        Console.WriteLine("\nSequência D:");
+        List<int> sequenciaD = SequenciaD(5);
+        Console.WriteLine(string.Join(", ", sequenciaD));
+
+        Console.WriteLine("\nSequência E:");
+        List<int> sequenciaE = SequenciaE(7);
+        Console.WriteLine(string.Join(", ", sequenciaE));
+
+    }
+}
+*/
+
+
+
+//Questão 4
+/*Primeira ida:
+
+ - Ligo o primeiro interruptor e deixo ligado por um tempo.
+ - Em seguida, desligo o primeiro interruptor e ligo o segundo interruptor
+ - Entro na sala onde estão as lâmpadas.
+
+
+ - Se uma lâmpada estiver acesa, então o primeiro interruptor controla essa lâmpada.
+ - Se a lâmpada estiver desligada e estiver quente se eu tocar, então o segundo interruptor controla essa lâmpada.
+ - Se a lâmpada estiver desligada e estiver fria quando eu tocar, então o terceiro interruptor controla essa lâmpada.
+*/
+
+
+
+
+
+//Questão 5
+/*
+class Program
+{
+    static string InverterString(string str)
+    {
+        char[] caracteres = str.ToCharArray();
+        int inicio = 0;
+        int fim = caracteres.Length - 1;
+
+        while (inicio < fim)
+        {
+            //Troca os caracteres de posição
+            char temp = caracteres[inicio];
+            caracteres[inicio] = caracteres[fim];
+            caracteres[fim] = temp;
+
+            //Avança para o próximo par de caracteres
+            inicio++;
+            fim--;
+        }
+
+        return new string(caracteres);
+    }
+
+    static void Main(string[] args)
+    {
+        //Digite a string que quiser
+        string exemploString = "Olá, mundo!";
+
+        //Inverterá a string
+        string stringInvertida = InverterString(exemploString);
+
+        //Exibirá a string invertida e a original
+        Console.WriteLine($"String original: {exemploString}");
+        Console.WriteLine($"String invertida:`{stringInvertida}");
+    }
+}
+*/
